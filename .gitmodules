@@ -1,0 +1,3 @@
+[submodule "EDCBCtrlCmd"]
+	path = EDCBCtrlCmd
+	url = https://github.com/silane/EDCBCtrlCmd-linux.git
