@@ -72,8 +72,12 @@ int main(int argc,char **argv)
 	AtoW(ip,wip);
 	controller.SetNWSetting(wip,port);
 
-	if(controller.SendSuspend(reboot<<8 | mode)==NO_ERR)
+	DWORD ret = controller.SendSuspend(reboot<<8 | mode);
+	if(ret == NO_ERR)
 		return 0;
 	else
+	{
+		std::cerr << "Error code: " << ret << std::endl;
 		return 2;
+	}
 }
